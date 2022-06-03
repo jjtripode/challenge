@@ -15,11 +15,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
-using nubimetricsApi.Data;
-using nubimetricsApi.Mapping;
-using nubimetricsApi.Services;
+using nubimetricsApiCurrency.Data;
+using nubimetricsApiCurrency.Mapping;
+using nubimetricsApiCurrency.Services;
 
-namespace nubimetricsApi
+namespace nubimetricsApiCurrency
 {
     public class Startup
     {
@@ -45,8 +45,8 @@ namespace nubimetricsApi
             }
             );
 
-            services.AddScoped<IPaisesService, PaisesService>();
-            services.AddScoped<IProductosService, ProductosService>();
+            services.AddScoped<ICurrencyService, CurrencyService>();
+            services.AddScoped<IFileSystemService, FileSystemService>();
 
             services.AddAutoMapper(
                 typeof(ModelToResponseProfile),

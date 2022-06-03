@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using nubimetricsApi.Models;
+using NubimetricsApi.Models;
 
 namespace nubimetricsApi.Data
 {

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace nubimetricsApi.Models
+namespace NubimetricsApi.Models
 {
     public class Usuario
     {

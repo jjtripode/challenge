@@ -6,6 +6,7 @@ using Flurl.Http;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Cors;
 using System.Collections.Generic;
+using NubimetricsApi.Models;
 
 namespace nubimetricsApi.Controllers
 {
@@ -74,19 +75,74 @@ namespace nubimetricsApi.Controllers
         }
 
         /// <summary>
-        /// Retornar todos los usuarios
+        /// Retorna todos los usuarios
         /// </summary>
         /// <remarks>
         ///
         /// </remarks>
         [HttpGet("Usuarios")]
-        public async Task<ActionResult<IEnumerable<RootProductoDTO>>> getAllUsuarios()
+        public async Task<ActionResult<IEnumerable<Usuario>>> GetAllUsuarios()
         {
            var entities = await _usuariosService.GetAllAsync();
 
            return Ok(entities);
         }
 
+        /// <summary>
+        /// Retorna todos los usuarios
+        /// </summary>
+        /// <remarks>
+        ///
+        /// </remarks>
+        [HttpGet("Usuarios/{id}")]
+        public async Task<Usuario> getUsuarioById(int id)
+        {
+           var entity = await _usuariosService.GetByIdAsync(id);
 
+           return entity;
+        }
+
+        /// <summary>
+        /// Retorna todos los usuarios
+        /// </summary>
+        /// <remarks>
+        ///
+        /// </remarks>
+        [HttpPost("Usuarios")]
+        public async Task<Usuario> CreateUsuario( Usuario usuario )
+        {
+           var entity = await _usuariosService.SaveOrUpdateAsync(usuario);
+
+           return entity;
+        }
+
+        /// <summary>
+        /// Retorna todos los usuarios
+        /// </summary>
+        /// <remarks>
+        ///
+        /// </remarks>
+        [HttpPut("Usuarios")]
+        public async Task<Usuario> UpdateUsuario( Usuario usuario )
+        {
+           var entity = await _usuariosService.SaveOrUpdateAsync(usuario);
+
+           return entity;
+        }
+
+        /// <summary>
+        /// Retorna todos los usuarios
+        /// </summary>
+        /// <remarks>
+        ///
+        /// </remarks>
+        [HttpDelete("Usuarios")]
+        public async Task<bool> DeleteUsuario( int id )
+        {
+           var entity = await _usuariosService.DeleteAsync(id);
+
+           return entity;
+        }
     }
+
 }

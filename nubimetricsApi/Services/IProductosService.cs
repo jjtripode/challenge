@@ -7,6 +7,6 @@ namespace nubimetricsApi.Services
 {
     public interface IProductosService
     {
-        Task<Root> FindByDescripcionAsync(string texto);
+       Task<Root> FindByDescripcionAsync(string texto);
     }
 }

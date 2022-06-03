@@ -17,15 +17,18 @@ namespace nubimetricsApi.Controllers
 
         private readonly IPaisesService _paisesService;
         private IProductosService _productosService;
+        private readonly IUsuariosService _usuariosService;
         private readonly IMapper _mapper;
 
         public NubimetricsApiController(
                     IPaisesService colectivosService,
                     IProductosService productosService,
+                    IUsuariosService usuariosService,
                    IMapper mapper)
         {
             _paisesService = colectivosService;
             _productosService = productosService;
+            _usuariosService = usuariosService;
             _mapper = mapper;
         }
 
@@ -71,22 +74,17 @@ namespace nubimetricsApi.Controllers
         }
 
         /// <summary>
-        /// Busca producto en ML por descripcion
+        /// Retornar todos los usuarios
         /// </summary>
         /// <remarks>
         ///
-        /// El response es resumido a estos campos:
-        /// id, site_id, title, price, seller.id, permalink
-        ///
         /// </remarks>
         [HttpGet("Usuarios")]
-        public async Task<ActionResult<IEnumerable<RootProductoDTO>>> FindProductosByDescripcion(string descripcion)
+        public async Task<ActionResult<IEnumerable<RootProductoDTO>>> getAllUsuarios()
         {
-          var entity = await _productosService.FindByDescripcionAsync(descripcion);
+           var entities = await _usuariosService.GetAllAsync();
 
-           var result = _mapper.Map<IEnumerable<Models.MercadolibreModels.Productos.Result>, IEnumerable<RootProductoDTO>>(entity.results);
-
-           return Ok(result);
+           return Ok(entities);
         }
 
 

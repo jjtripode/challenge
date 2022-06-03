@@ -58,14 +58,14 @@ namespace transportePublicoApi
                 c.SwaggerDoc("v1", new Info
                 {
                     Version = "v1.1",
-                    Title = "Transporte API",
-                    Description = "Api Transporte Substes, Trenes, Colectivos",
-                    TermsOfService = "https://example.com/terms",
+                    Title = "Nubimetrics API",
+                    Description = "Nubimetrics API CHALLENGE - CONSUMIENTO DE MERCADOLIBRE",
+                    TermsOfService = "https://nubimstrics.com",
                     Contact = new Contact
                     {
                         Name = "Juan",
-                        Email = "Juan@mail.com",
-                        Url = "https://twitter.com/jjtripode@hotmail.com",
+                        Email = "jjtripode@hotmail.com",
+                        Url = "",
                     },
                     License = new License
                     {

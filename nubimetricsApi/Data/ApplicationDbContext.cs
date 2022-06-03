@@ -18,7 +18,8 @@ namespace nubimetricsApi.Data
         {
             builder.Entity<Usuario>()
             .HasData( new Usuario {
-                 Nombre  ="Nombre   1"                   
+                 Id      =          1
+                ,Nombre  ="Nombre   1"                   
                 ,Apellido="Apellido 1"
                 ,Email   ="Email    1"
                 ,Password="Password 1"
@@ -26,7 +27,8 @@ namespace nubimetricsApi.Data
 
             builder.Entity<Usuario>()
             .HasData( new Usuario {
-                 Nombre  ="Nombre  2"                   
+                Id      =         2
+                ,Nombre  ="Nombre  2"                   
                 ,Apellido="Apellido2"
                 ,Email   ="Email   2"
                 ,Password="Password2"
@@ -34,7 +36,8 @@ namespace nubimetricsApi.Data
 
              builder.Entity<Usuario>()
             .HasData( new Usuario {
-                 Nombre  ="Nombre  3"                   
+                 Id      =         3
+                ,Nombre  ="Nombre  3"                   
                 ,Apellido="Apellido3"
                 ,Email   ="Email   3"
                 ,Password="Password3"
@@ -42,7 +45,8 @@ namespace nubimetricsApi.Data
 
             builder.Entity<Usuario>()
             .HasData( new Usuario {
-                 Nombre  ="Nombre  4"                   
+                 Id      =         4
+                ,Nombre  ="Nombre  4"                   
                 ,Apellido="Apellido4"
                 ,Email   ="Email   4"
                 ,Password="Password4"

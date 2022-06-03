@@ -5,7 +5,7 @@ using nubimetricsApi.Models.MercadolibreModels.Paises;
 
 namespace nubimetricsApi.Services
 {
-    public interface IUsuarioService
+    public interface IUsuariosService
     {
         Task<IEnumerable<Usuario>> GetAllAsync();
     }

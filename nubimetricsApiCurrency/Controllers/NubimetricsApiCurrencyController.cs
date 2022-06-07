@@ -40,7 +40,7 @@ namespace nubimetricsApiCurrency.Controllers
         /// 
         /// </remarks>
         [HttpGet("currencies")]
-        public async Task<ActionResult<IEnumerable<CurrencyDTO>>> GetAall()
+        public async Task<ActionResult<IEnumerable<CurrencyDTO>>> GetAll()
         {
            var rates = new List<nubimetricsApi.Models.MercadolibreModels.Rate.Root>();
            var responseCurrencies = await _currencyService.GetAllAsync();
